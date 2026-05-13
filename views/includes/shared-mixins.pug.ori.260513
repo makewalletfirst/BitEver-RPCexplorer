@@ -237,7 +237,7 @@ mixin txList(visibleTxs, txCount, limit, offset, inputsByTxid, options={})
 									if (txFee > 0)
 										span.ms-2 (
 											| #{parseInt(txFee.dividedBy(tx.vsize).times(coinConfig.baseCurrencyUnit.multiplier)).toLocaleString()}
-											span.text-tiny.ms-1 ever/vB
+											span.text-tiny.ms-1 sat/vB
 											span )
 								
 
@@ -364,7 +364,7 @@ mixin valueDisplay(val, options={})
 		if (userSettings.displayCurrency == "bec")
 			+_valueDisplayBtc(val, options)
 
-		else if (userSettings.displayCurrency == "ever")
+		else if (userSettings.displayCurrency == "sat")
 			+_valueDisplaySat(val, 1000000)
 
 		else if (userSettings.displayCurrency == "local")
@@ -401,7 +401,7 @@ mixin _valueDisplayBtc(val, options={})
 
 mixin _valueDisplaySat(val, summarizeMin=Infinity, summarizeDecimals=3)
 	- var localCurrencyDisplay = userSettings.displayCurrency == "local";
-	- var parts = utils.formatCurrencyAmount(val, "ever");
+	- var parts = utils.formatCurrencyAmount(val, "sat");
 
 	//span #{JSON.stringify(parts)}
 	
