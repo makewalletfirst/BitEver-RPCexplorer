@@ -2,9 +2,9 @@ name: BitEver RPC Explorer CI
 
 on:
   push:
-    branches: [ "main", "master" ]
+    branches: [ "main", "master", "260525" ]
   pull_request:
-    branches: [ "main", "master" ]
+    branches: [ "main", "master", "260525" ]
 
 jobs:
   build-and-test:
